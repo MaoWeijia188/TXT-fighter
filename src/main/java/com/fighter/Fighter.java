@@ -11,4 +11,11 @@ public class Fighter {
         this.hp = MAX_HP;
         this.defending = false;
     }
+    public int takeDamage(int damage){
+        int actual = damage;
+        if(defending){
+            actual = (int) Math.floor(damage * (1 - DEFEND_REDUCTION));
+            defending = false;
+        }
+    }
 }
